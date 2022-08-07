@@ -6,16 +6,35 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     [SerializeField]
-    private float   moveSpeed;      // 이동속도
+    private float   moveSpeed;
     [SerializeField]
-    private Vector3 moveDirection;  // 이동방향
-
-    // 외부에서 이동방향을 확인 할 수 있도록 Get 프로퍼티 선언
+    private float   increaseAmount;
+    [SerializeField]
+    private float   increaseCycleTime;
+    
+    private Vector3 moveDirection;
+    private float   rotateSpeed;
+    
     public Vector3 MoveDirection => moveDirection;
 
+    private IEnumerator Start()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(increaseCycleTime);
+
+            moveSpeed += increaseAmount;
+        }
+    }
+    
+    private void OnEnable()
+    {
+        rotateSpeed = 3f;
+    }
     private void Update()
     {
         transform.position += moveDirection * moveSpeed * Time.deltaTime;
+        transform.Rotate(new Vector3(1, 1, 0) * rotateSpeed * Time.deltaTime);
     }
 
     public void MoveTo(Vector3 direction)
