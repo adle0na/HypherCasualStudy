@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class GameController : MonoBehaviour
+public class GameController_ZIG : MonoBehaviour
 {
     [Header("GameStart UI")]
     [SerializeField]
-    private FadeEffect[]    fadeGameStart;
+    private FadeEffect_ZIG[]    fadeGameStart;
     [SerializeField]
     private GameObject      panelGameStart;
     [SerializeField]

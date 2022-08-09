@@ -3,19 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tile : MonoBehaviour
+public class Tile_ZIG : MonoBehaviour
 {
     [SerializeField]
     private float       falldownTime = 2f;
     private Rigidbody   rigidbody;
-    private TileSpawner _tileSpawner = null;
+    private TileSpawner_ZIG _tileSpawner = null;
 
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody>();
     }
 
-    public void Setup(TileSpawner tileSpawner)
+    public void Setup(TileSpawner_ZIG tileSpawner)
     {
         this._tileSpawner = tileSpawner;
     }

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movement : MonoBehaviour
+public class Movement_ZIG : MonoBehaviour
 {
     [SerializeField]
     private float   moveSpeed;

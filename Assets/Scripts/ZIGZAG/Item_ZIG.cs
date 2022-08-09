@@ -4,14 +4,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class Item : MonoBehaviour
+public class Item_ZIG : MonoBehaviour
 {
     [SerializeField]
     private GameObject     itemGetEffectPrefab;
-    private GameController _gameController;
+    private GameController_ZIG _gameController;
     private float          rotateSpeed;
 
-    public void Setup(GameController gameController)
+    public void Setup(GameController_ZIG gameController)
     {
         this._gameController = gameController;
 

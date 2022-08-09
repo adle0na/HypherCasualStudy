@@ -3,16 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController_ZIG : MonoBehaviour
 {
     [SerializeField]
-    private GameController _gameController;
-    private Movement       _movement;  
-    private float          limitDeathY; 
+    private GameController_ZIG _gameController;
+    private Movement_ZIG       _movement;  
+    private float              limitDeathY; 
 
     private void Awake()
     {
-        _movement = GetComponent<Movement>();
+        _movement = GetComponent<Movement_ZIG>();
 
         limitDeathY = transform.position.y - transform.localScale.y * 2;
     }

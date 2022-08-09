@@ -4,14 +4,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class TileSpawner : MonoBehaviour
+public class TileSpawner_ZIG : MonoBehaviour
 {
     [SerializeField]
-    private GameController _gameController;
+    private GameController_ZIG _gameController;
     [SerializeField]
-    private GameObject     tilePrefab;
+    private GameObject         tilePrefab;
     [SerializeField]
-    private Transform      currentTile;
+    private Transform          currentTile;
 
     [SerializeField]
     private int            spawnTileCountAtStart = 100;
@@ -31,9 +31,9 @@ public class TileSpawner : MonoBehaviour
 
         clone.transform.SetParent(transform);
         
-        clone.GetComponent<Tile>().Setup(this);
+        clone.GetComponent<Tile_ZIG>().Setup(this);
         
-        clone.transform.GetChild(1).GetComponent<Item>().Setup(_gameController);
+        clone.transform.GetChild(1).GetComponent<Item_ZIG>().Setup(_gameController);
 
         SpawnTile(clone.transform);
     }

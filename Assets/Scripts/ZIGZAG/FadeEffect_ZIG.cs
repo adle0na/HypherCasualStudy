@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class FadeEffect : MonoBehaviour
+public class FadeEffect_ZIG : MonoBehaviour
 {
     [SerializeField]
     private float fadeTime = 0.5f;

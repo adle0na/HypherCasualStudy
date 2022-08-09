@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 2335928444931398384}
   - component: {fileID: 7892901996400593285}
   - component: {fileID: -6217810670474457830}
-  - component: {fileID: 2392204156369970975}
+  - component: {fileID: 5988984191812855076}
   m_Layer: 0
   m_Name: Tile
   m_TagString: Untagged
@@ -145,7 +145,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 122
   m_CollisionDetection: 0
---- !u!114 &2392204156369970975
+--- !u!114 &5988984191812855076
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
