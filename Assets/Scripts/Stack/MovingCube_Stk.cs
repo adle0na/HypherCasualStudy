@@ -8,13 +8,15 @@ public class MovingCube_Stk : MonoBehaviour
     private float   moveSpeed = 1.5f;
     private Vector3 moveDirection;
 
-    private CubeSpawner_Stk _cubeSpawner;
-    private MoveAxis        _moveAxis;
+    private CubeSpawner_Stk       _cubeSpawner;
+    private MoveAxis              _moveAxis;
+    private PerfectController_Stk _perfectController;
 
-    public void Setup(CubeSpawner_Stk _cubeSpawner, MoveAxis _moveAxis)
+    public void Setup(CubeSpawner_Stk _cubeSpawner, PerfectController_Stk _perfectController, MoveAxis _moveAxis)
     {
-        this._cubeSpawner = _cubeSpawner;
-        this._moveAxis    = _moveAxis;
+        this._cubeSpawner       = _cubeSpawner;
+        this._perfectController = _perfectController;
+        this._moveAxis          = _moveAxis;
 
         if (_moveAxis == MoveAxis.x)      moveDirection = Vector3.left;
         else if (_moveAxis == MoveAxis.z) moveDirection = Vector3.back;
@@ -44,10 +46,15 @@ public class MovingCube_Stk : MonoBehaviour
 
         if (IsGameOver(hangOver)) return true;
 
-            float direction = hangOver >= 0 ? 1 : -1;
+        bool isPerfect = _perfectController.IsPerfect(hangOver);
 
-        if (_moveAxis == MoveAxis.x)      SplitCubeOnX(hangOver, direction);
-        else if (_moveAxis == MoveAxis.z) SplitCubeOnZ(hangOver, direction);
+        if (isPerfect == false)
+        {
+            float direction = hangOver >= 0 ? 1 : -1;
+            
+            if (_moveAxis == MoveAxis.x)      SplitCubeOnX(hangOver, direction);
+            else if (_moveAxis == MoveAxis.z) SplitCubeOnZ(hangOver, direction);
+        }
         
         _cubeSpawner.LastCube = this.transform;
 
@@ -127,6 +134,28 @@ public class MovingCube_Stk : MonoBehaviour
         if (Mathf.Abs(hangOver) > max) return true;
 
         return false;
+    }
+
+    public void RecoveryCube()
+    {
+        float recoverySize = 0.1f;
+
+        if (_moveAxis == MoveAxis.x)
+        {
+            float newXSize       = transform.localScale.x + recoverySize;
+            float newXPosition   = transform.position.x + recoverySize * 0.5f;
+
+            transform.position   = new Vector3(newXPosition, transform.position.y, transform.position.z);
+            transform.localScale = new Vector3(newXSize, transform.localScale.y, transform.localScale.z);
+        }
+        else
+        {
+            float newZSize       = transform.localScale.z + recoverySize;
+            float newZPosition   = transform.position.z + recoverySize * 0.5f;
+
+            transform.position   = new Vector3(transform.position.x, transform.position.y, newZPosition);
+            transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, newZSize);
+        }
     }
     
 }

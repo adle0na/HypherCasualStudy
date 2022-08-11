@@ -28,7 +28,7 @@ public class StageController_Wav : MonoBehaviour
     private IEnumerator Start()
     {
         int bestScore = PlayerPrefs.GetInt("BestScore");
-        textBestScore.text = $"<size=50>BSET</size>\n<size=100>{bestScore}</size>";
+        textBestScore.text = $"<size=50>BEST</size>\n<size=100>{bestScore}</size>";
         
         while (true)
         {

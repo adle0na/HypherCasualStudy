@@ -9,9 +9,11 @@ public enum MoveAxis { x = 0, z}
 public class CubeSpawner_Stk : MonoBehaviour
 {
     [SerializeField]
-    private Transform[]   cubeSpawnPoints;
+    private Transform[]           cubeSpawnPoints;
     [SerializeField]
-    private Transform     movingCubePrefab;
+    private Transform             movingCubePrefab;
+    [SerializeField]
+    private PerfectController_Stk _perfectController;
 
     [field: SerializeField]
     public Transform      LastCube { set; get; }
@@ -47,7 +49,7 @@ public class CubeSpawner_Stk : MonoBehaviour
         
         clone.GetComponent<MeshRenderer>().material.color = GetRandomColor();
         
-        clone.GetComponent<MovingCube_Stk>().Setup(this, _moveAxis);
+        clone.GetComponent<MovingCube_Stk>().Setup(this, _perfectController, _moveAxis);
 
         _moveAxis = (MoveAxis) (((int) _moveAxis + 1) % cubeSpawnPoints.Length);
 

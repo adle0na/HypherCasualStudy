@@ -21,8 +21,11 @@ public class UIController_Stk : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI textHighScore;
     [SerializeField]
+    private TextMeshProUGUI textHighScoreText;
+    [SerializeField]
     private GameObject      textTouchToRestart;
-    
+
+
     public void GameStart()
     {
         mainPannel.SetActive(false);
@@ -45,6 +48,7 @@ public class UIController_Stk : MonoBehaviour
 
             textHighScore.text = PlayerPrefs.GetInt("HighScore").ToString();
             textHighScore.gameObject.SetActive(true);
+            textHighScoreText.gameObject.SetActive(true);
         }
         
         textTouchToRestart.SetActive(true);

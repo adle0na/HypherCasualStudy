@@ -18,6 +18,19 @@ public class GameController_Stk : MonoBehaviour
     {
         while (true)
         {
+            if (Input.GetMouseButtonDown(1))
+            {
+                if (_cubeSpawner.CurrentCube != null)
+                {
+                    _cubeSpawner.CurrentCube.transform.position = _cubeSpawner.LastCube.position + Vector3.up * 0.1f;
+                    _cubeSpawner.CurrentCube.Arrangement();
+                    currentScore++;
+                    _uiController.UpdateScore(currentScore);
+                }
+                _cameraController.MoveOneStep();
+                _cubeSpawner.SpawnCube();
+            }
+            
             if (Input.GetMouseButtonDown(0))
             {
                 if (isGameStart == false)
