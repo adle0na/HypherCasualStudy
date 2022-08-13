@@ -6817,7 +6817,7 @@ MonoBehaviour:
   perfectEffect: {fileID: 2412554591010063703, guid: 947bb14ba1fd2ec41bca748bed9ef975, type: 3}
   perfectComboEffect: {fileID: 2412554591010063703, guid: 02473c0282cdc02459c287bb9ff871de, type: 3}
   perfectRecoveryEffect: {fileID: 8246928943973605809, guid: 474728a393d702743b42da1539bc58ca, type: 3}
-  recoveryCombo: 5
+  recoveryCombo: 2
 --- !u!4 &1954070036
 Transform:
   m_ObjectHideFlags: 0

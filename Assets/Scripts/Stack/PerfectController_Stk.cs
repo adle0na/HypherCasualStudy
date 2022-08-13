@@ -18,7 +18,7 @@ public class PerfectController_Stk : MonoBehaviour
 
     [SerializeField]
     private int   recoveryCombo     = 3;
-    private float perfectCorrection = 0.01f;
+    private float perfectCorrection = 0.04f;
     private float addedSize         = 0.1f;
     private int   perfectCombo      = 0;
 
@@ -33,8 +33,7 @@ public class PerfectController_Stk : MonoBehaviour
         {
             EffectProcess();
             SFXProcess();
-
-            _cubeSpawner.CurrentCube.RecoveryCube();
+            
             perfectCombo++;
 
             return true;
@@ -60,8 +59,12 @@ public class PerfectController_Stk : MonoBehaviour
 
         if (perfectCombo > 0 && perfectCombo < recoveryCombo)
             StartCoroutine(OnPerfectComboEffect(position, scale));
-        else if (perfectCombo >= 5)
+        else if (perfectCombo >= recoveryCombo)
+        {
+            _cubeSpawner.CurrentCube.RecoveryCube();
             OnPerfectRecoveryEffect();
+        }
+            
     }
 
     private void OnPerfectEffect(Vector3 position, Vector3 scale)

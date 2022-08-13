@@ -5,34 +5,34 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/Stage01.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/Stage02.unity
-    guid: 3bfeca732f613d24183d707beae46890
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/Stage03.unity
-    guid: e13433cf630e84a459ce33ca9e4e7d0d
-  - enabled: 1
-    path: Assets/Scenes/Stage04.unity
-    guid: 5a2e8ba5822bab848b68a3cc099ae109
-  - enabled: 1
-    path: Assets/Scenes/Stage05.unity
-    guid: 8d63be4887faaa34b871294f0761d301
-  - enabled: 1
-    path: Assets/Scenes/Stage06.unity
-    guid: 930b8e419858e7d40a476c6d90092149
-  - enabled: 1
-    path: Assets/Scenes/Stage07.unity
-    guid: b83358080c7d14043a641ac54a1b627f
-  - enabled: 1
-    path: Assets/Scenes/Stage08.unity
-    guid: ea78e0073cdfe37418bda6e31662d104
-  - enabled: 1
-    path: Assets/Scenes/Stage09.unity
-    guid: d42f5191692c75043b6d6d880c6d1dae
-  - enabled: 1
-    path: Assets/Scenes/ZIGZAG_Scene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}
