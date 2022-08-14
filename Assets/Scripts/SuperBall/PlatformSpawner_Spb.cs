@@ -15,8 +15,9 @@ public class PlatformSpawner_Spb : MonoBehaviour
     {
         Transform[] platforms = SetupPlatformFigure();
 
+        //int platformCount = SetupPlatformCount();
         int platformCount = SetupPlatformCount();
-
+        
         var indexs = SetupStartAndEndIndex(platforms);
 
         for (int i = 0; i < platformCount; ++i)

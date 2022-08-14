@@ -9,8 +9,22 @@ public class GameController_Spb : MonoBehaviour
     private PlatformSpawner_Spb _platformSpawner;
     [SerializeField]
     private UIController_Spb    _uiController;
+
+    [Header("SFX")]
+    [SerializeField]
+    private AudioClip           gameOverClip;
+    [SerializeField]
+    private AudioClip           gameClearClip;
+
+
+    [Header("VFX")]
+    [SerializeField]
+    private GameObject          gameOverEffect;
+    [SerializeField]
+    private GameObject          gameClearEffect;
     
     private RandomColor_Spb     _randomColorSpb;
+    private AudioSource         _audioSource;
 
     private int brokePlatformCount = 0;
     private int totalPlatformCount;
@@ -19,6 +33,11 @@ public class GameController_Spb : MonoBehaviour
 
     private void Awake()
     {
+        _audioSource = GetComponent<AudioSource>();
+
+        currentScore = PlayerPrefs.GetInt("CurrentScore");
+        _uiController.CurrentScore = currentScore;
+        
         totalPlatformCount = _platformSpawner.SpawnPlatfroms();
 
         _randomColorSpb = GetComponent<RandomColor_Spb>();
@@ -29,7 +48,8 @@ public class GameController_Spb : MonoBehaviour
     {
         while (true)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) ||
+                PlayerPrefs.GetInt("DeactivateMain") == 1)
             {
                 GameStart();
                 
@@ -54,5 +74,74 @@ public class GameController_Spb : MonoBehaviour
 
         currentScore += addedScore;
         _uiController.CurrentScore = currentScore;
+    }
+
+    public void GameOver(Vector3 position)
+    {
+        IsGamePlay = false;
+
+        _audioSource.clip = gameOverClip;
+        _audioSource.Play();
+        gameOverEffect.transform.position = position;
+        gameOverEffect.SetActive(true);
+
+        UpdateHighScore();
+        
+        _uiController.GameOver(currentScore);
+        
+        PlayerPrefs.SetInt("Level", 0);
+        
+        PlayerPrefs.SetInt("CurrentScore", 0);
+
+        StartCoroutine(nameof(SceneLoadToOnClick));
+    }
+
+    public void GameClear()
+    {
+        IsGamePlay = false;
+
+        _audioSource.clip = gameClearClip;
+        _audioSource.Play();
+        gameClearEffect.SetActive(true);
+        
+        UpdateHighScore();
+        
+        _uiController.GameClear();
+        
+        PlayerPrefs.SetInt("Level", PlayerPrefs.GetInt("Level")+1);
+        
+        PlayerPrefs.SetInt("CurrentScore", currentScore);
+
+        StartCoroutine(nameof(SceneLoadToOnClick));
+    }
+    
+    private void UpdateHighScore()
+    {
+        if (currentScore > PlayerPrefs.GetInt("HighScore"))
+        {
+            PlayerPrefs.SetInt("HighScore", currentScore);
+        }
+    }
+
+    private IEnumerator SceneLoadToOnClick()
+    {
+        while (true)
+        {
+            if (Input.GetMouseButtonDown(0))
+                UnityEngine.SceneManagement.SceneManager.LoadScene("SuperBall");
+
+            yield return null;
+        }
+    }
+
+    private void OnApplicationQuit()
+    {
+        PlayerPrefs.SetInt("CurrentScore", 0);
+    }
+
+    [ContextMenu("Reset All PlayerPrefs")]
+    private void ResetAll()
+    {
+        PlayerPrefs.DeleteAll();
     }
 }

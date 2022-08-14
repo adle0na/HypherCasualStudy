@@ -12,33 +12,37 @@ public class PlayerController_Spb : MonoBehaviour
     
     [Header("Parameters")]
     [SerializeField]
-    private float              bounceForce = 5;
+    private float                   bounceForce = 5;
     [SerializeField]
-    private float              dropForce = -10;
+    private float                   dropForce = -10;
     
     [Header("SFX")]
     [SerializeField]
-    private AudioClip          bounceClip;
+    private AudioClip               bounceClip;
     [SerializeField]
-    private AudioClip          normalBreakClip;
+    private AudioClip               normalBreakClip;
+    [SerializeField]
+    private AudioClip               powerBreakClip;
     
     [Header("VFX")]
     [SerializeField]
-    private Material           playerMaterial;
+    private Material                playerMaterial;
     [SerializeField]
-    private Transform          splashImg;
+    private Transform               splashImg;
     [SerializeField]
-    private ParticleSystem[]   splashParticles;
+    private ParticleSystem[]        splashParticles;
     
-    private new Rigidbody    _rigidbody;
-    private     AudioSource  _audioSource;
+    private new Rigidbody           _rigidbody;
+    private     AudioSource         _audioSource;
+    private     PlayerPowerMode_Spb _playerPowerMode;
 
     private Vector3 splashWeight = new Vector3(0, 0.22f, 0.1f);
     private bool    isClicked    = false;
     private void Awake()
     {
-        _rigidbody   = GetComponent<Rigidbody>();
-        _audioSource = GetComponent<AudioSource>();
+        _rigidbody       = GetComponent<Rigidbody>();
+        _audioSource     = GetComponent<AudioSource>();
+        _playerPowerMode = GetComponent<PlayerPowerMode_Spb>();
     }
 
     private void Update()
@@ -47,6 +51,8 @@ public class PlayerController_Spb : MonoBehaviour
         
         UpdateMouseButton();
         UpdateDropToSmash();
+        
+        _playerPowerMode.UpdatePowerMode(isClicked);
     }
     
     private void OnCollisionEnter(Collision collision)
@@ -59,26 +65,38 @@ public class PlayerController_Spb : MonoBehaviour
         }
         else
         {
-            if (collision.gameObject.CompareTag("BreakPart"))
+            if (_playerPowerMode.IsPowerMode)
             {
-                var platform = collision.transform.parent.GetComponent<PlatformController_Spb>();
-                _rigidbody.velocity = new Vector3(0, dropForce, 0);
-
-                if (platform.IsCollision == false)
+                if (collision.gameObject.CompareTag("BreakPart") ||
+                    collision.gameObject.CompareTag("NonBreakPart"))
                 {
-                    platform.BreakAllParts();
+                    OnCollisionWithBreakPart(collision, powerBreakClip, 2);
+                    _rigidbody.velocity = new Vector3(0, dropForce, 0);
+                }
+
+            }
+            else
+            {
+                if (collision.gameObject.CompareTag("BreakPart"))
+                {
+                    OnCollisionWithBreakPart(collision, normalBreakClip, 1);
+                    _rigidbody.velocity = new Vector3(0, dropForce, 0);
+                }
+                else if (collision.gameObject.CompareTag("NonBreakPart"))
+                {
+                    _gameController.GameOver(transform.position);
                     
-                    PlaySound(normalBreakClip);
-                    
-                    _gameController.OnCollisionWithPlatform();
+                    gameObject.SetActive(false);
                 }
             }
-            else if (collision.gameObject.CompareTag("NonBreakPart"))
+
+            if (collision.gameObject.CompareTag("LastPlatform") && _gameController.IsGamePlay)
             {
-                _rigidbody.isKinematic = true;
-                
-                Debug.Log("GameOver");
+                _playerPowerMode.DeactivateAll();
+
+                _gameController.GameClear();
             }
+
         }
     }
 
@@ -86,6 +104,8 @@ public class PlayerController_Spb : MonoBehaviour
     {
         if (_rigidbody.velocity.y > 0) return;
 
+        if (isClicked && !collision.gameObject.CompareTag("LastPlatform")) return;
+        
         OnJumpProcess(collision);
     }
 
@@ -145,5 +165,17 @@ public class PlayerController_Spb : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && isClicked)
             _rigidbody.velocity = new Vector3(0, dropForce, 0);
+    }
+    
+    private void OnCollisionWithBreakPart(Collision collision, AudioClip clip, int addedScore)
+    {
+        var platform = collision.transform.parent.GetComponent<PlatformController_Spb>();
+
+        if (platform.IsCollision == false)
+        {
+            platform.BreakAllParts();
+            PlaySound(clip);
+            _gameController.OnCollisionWithPlatform(addedScore);
+        }
     }
 }
