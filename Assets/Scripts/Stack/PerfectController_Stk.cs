@@ -17,7 +17,7 @@ public class PerfectController_Stk : MonoBehaviour
     private AudioSource     _audioSource;
 
     [SerializeField]
-    private int   recoveryCombo     = 3;
+    private int   recoveryCombo     = 5;
     private float perfectCorrection = 0.04f;
     private float addedSize         = 0.1f;
     private int   perfectCombo      = 0;
