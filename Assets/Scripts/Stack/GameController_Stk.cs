@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,7 +14,7 @@ public class GameController_Stk : MonoBehaviour
 
     private bool                 isGameStart  = false;
     private int                  currentScore = 0;
-        
+
     private IEnumerator Start()
     {
         while (true)

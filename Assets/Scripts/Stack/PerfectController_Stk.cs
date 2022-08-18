@@ -6,16 +6,23 @@ using UnityEngine;
 public class PerfectController_Stk : MonoBehaviour
 {
     [SerializeField]
-    private CubeSpawner_Stk _cubeSpawner;
+    private CubeSpawner_Stk  _cubeSpawner;
     [SerializeField]
-    private Transform       perfectEffect;
+    private UIController_Stk _uiController;
     [SerializeField]
-    private Transform       perfectComboEffect;
+    private Transform        perfectEffect;
     [SerializeField]
-    private Transform       perfectRecoveryEffect;
+    private Transform        perfectComboEffect;
+    [SerializeField]
+    private Transform        perfectRecoveryEffect;
     
-    private AudioSource     _audioSource;
-
+    private AudioSource _audioSource;
+    
+    [SerializeField]
+    private AudioClip        _normalSound;
+    [SerializeField]
+    private AudioClip        _perfectSound;
+    
     [SerializeField]
     private int   recoveryCombo     = 5;
     private float perfectCorrection = 0.04f;
@@ -24,24 +31,27 @@ public class PerfectController_Stk : MonoBehaviour
 
     private void Awake()
     {
-        _audioSource = GetComponent<AudioSource>();
+        _audioSource  = GetComponent<AudioSource>();
     }
 
     public bool IsPerfect(float hangOver)
     {
         if (Mathf.Abs(hangOver) <= perfectCorrection)
         {
+            _audioSource.clip = _perfectSound;
+            _audioSource.Play();
             EffectProcess();
             SFXProcess();
-            
-            perfectCombo++;
+            updateCombo();
 
             return true;
         }
         else
         {
+            _audioSource.clip = _normalSound;
+            _audioSource.Play();
             perfectCombo = 0;
-            
+            _uiController.CombeFail();
             return false;
         }
     }
@@ -67,6 +77,12 @@ public class PerfectController_Stk : MonoBehaviour
             
     }
 
+    private void updateCombo()
+    {
+        perfectCombo++;
+        _uiController.UpdateCombo(perfectCombo);
+    }
+    
     private void OnPerfectEffect(Vector3 position, Vector3 scale)
     {
         Transform effect  = Instantiate(perfectEffect);
@@ -130,4 +146,5 @@ public class PerfectController_Stk : MonoBehaviour
         shape.radius = radius;
         shape.radiusThickness = radius * 0.5f;
     }
+    
 }

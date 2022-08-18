@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,7 @@ public class MovingCube_Stk : MonoBehaviour
     private CubeSpawner_Stk       _cubeSpawner;
     private MoveAxis              _moveAxis;
     private PerfectController_Stk _perfectController;
+    private int                   currentCombo;
 
     public void Setup(CubeSpawner_Stk _cubeSpawner, PerfectController_Stk _perfectController, MoveAxis _moveAxis)
     {
@@ -50,12 +52,12 @@ public class MovingCube_Stk : MonoBehaviour
 
         if (isPerfect == false)
         {
+            currentCombo = 0;
             float direction = hangOver >= 0 ? 1 : -1;
             
             if (_moveAxis == MoveAxis.x)      SplitCubeOnX(hangOver, direction);
             else if (_moveAxis == MoveAxis.z) SplitCubeOnZ(hangOver, direction);
         }
-        
         _cubeSpawner.LastCube = this.transform;
 
         return false;
