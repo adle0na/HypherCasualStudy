@@ -27,7 +27,7 @@ public class StageController_Wav : MonoBehaviour
     
     private IEnumerator Start()
     {
-        int bestScore = PlayerPrefs.GetInt("BestScore");
+        bestScore = PlayerPrefs.GetInt("BestScore");
         textBestScore.text = $"<size=50>BEST</size>\n<size=100>{bestScore}</size>";
         
         while (true)
@@ -52,7 +52,7 @@ public class StageController_Wav : MonoBehaviour
     
     public void GameOver()
     {
-        ShakeCamera_Wav.Instance.OnShakeCamera(0.5f, 0.1f);
+        ShakeCamera_Wav.Instance.OnShakeCamera(0.5f, 0.2f);
         
         IsGameOver = true;
 

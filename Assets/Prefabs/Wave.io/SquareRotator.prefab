@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2449775991012945808}
   - component: {fileID: 2449775991012945809}
-  - component: {fileID: 2449775991012945814}
   - component: {fileID: -2570160186089265099}
   m_Layer: 0
   m_Name: SquareRotator
@@ -84,19 +83,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2449775991012945814
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2449775991012945815}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46c8e51ba8cab214689a136c04c82ac2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotateSpeed: 50
 --- !u!61 &-2570160186089265099
 BoxCollider2D:
   m_ObjectHideFlags: 0

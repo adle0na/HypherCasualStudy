@@ -8,7 +8,7 @@ public class PlayerController_Spb : MonoBehaviour
 {
     [Header("Components")]
     [SerializeField]
-    private GameController_Spb _gameController;
+    private GameController_Spb      _gameController;
     
     [Header("Parameters")]
     [SerializeField]
