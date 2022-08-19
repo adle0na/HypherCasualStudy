@@ -20,6 +20,8 @@ public class StageController_Wav : MonoBehaviour
     private GameObject           buttonContinue;
     [SerializeField]
     private GameObject           textScoreText;
+    [SerializeField]
+    private GameObject           pauseButton;
     
     private int                  currentScore = 0;
     private int                  bestScore    = 0;
@@ -44,6 +46,7 @@ public class StageController_Wav : MonoBehaviour
 
     private void GameStart()
     {
+        pauseButton.SetActive(true);
         textTitle.SetActive(false);
         textTaptoPlay.SetActive(false);
         
@@ -58,7 +61,8 @@ public class StageController_Wav : MonoBehaviour
 
         if (currentScore == bestScore)
             PlayerPrefs.SetInt("BestScore", currentScore);
-
+        
+        pauseButton.SetActive(false);
         buttonContinue.SetActive(true);
         textScoreText.SetActive(true);
     }
@@ -69,12 +73,12 @@ public class StageController_Wav : MonoBehaviour
 
         textCurrentScore.text = currentScore.ToString();
 
+        _cameraController.ChangeBackgroundColor();
+        
         if (bestScore < currentScore)
         {
             bestScore = currentScore;
             textBestScore.text = $"<size=50>BEST</size>\n<size=100>{currentScore}</size>";
-            
-            _cameraController.ChangeBackgroundColor();
         }
     }
 
