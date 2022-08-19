@@ -98,6 +98,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8801194918613679527, guid: 464749b330082c741a3c86cfd7419797, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 464749b330082c741a3c86cfd7419797, type: 3}
 --- !u!4 &4218971477277647158 stripped
@@ -175,6 +179,10 @@ PrefabInstance:
     - target: {fileID: 2449775991012945808, guid: 40a78c05ba189bc44a9a01b04995c43a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 2449775991012945809, guid: 40a78c05ba189bc44a9a01b04995c43a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2449775991012945814, guid: 40a78c05ba189bc44a9a01b04995c43a, type: 3}
       propertyPath: rotateSpeed
@@ -262,6 +270,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 2449775991012945809, guid: 40a78c05ba189bc44a9a01b04995c43a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2449775991012945814, guid: 40a78c05ba189bc44a9a01b04995c43a, type: 3}
       propertyPath: rotateSpeed
       value: 30
@@ -336,6 +348,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8801194918613679527, guid: 464749b330082c741a3c86cfd7419797, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 464749b330082c741a3c86cfd7419797, type: 3}
 --- !u!4 &4218971477994095619 stripped
@@ -402,6 +418,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8801194918613679527, guid: 464749b330082c741a3c86cfd7419797, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 464749b330082c741a3c86cfd7419797, type: 3}
 --- !u!4 &4218971478270347613 stripped
@@ -467,6 +487,10 @@ PrefabInstance:
     - target: {fileID: 7403533297704320375, guid: 464749b330082c741a3c86cfd7419797, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8801194918613679527, guid: 464749b330082c741a3c86cfd7419797, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 464749b330082c741a3c86cfd7419797, type: 3}
@@ -545,6 +569,10 @@ PrefabInstance:
     - target: {fileID: 2449775991012945808, guid: 40a78c05ba189bc44a9a01b04995c43a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 2449775991012945809, guid: 40a78c05ba189bc44a9a01b04995c43a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2449775991012945814, guid: 40a78c05ba189bc44a9a01b04995c43a, type: 3}
       propertyPath: rotateSpeed
@@ -632,6 +660,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 2449775991012945809, guid: 40a78c05ba189bc44a9a01b04995c43a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2449775991012945814, guid: 40a78c05ba189bc44a9a01b04995c43a, type: 3}
       propertyPath: rotateSpeed
       value: 30
@@ -717,6 +749,10 @@ PrefabInstance:
     - target: {fileID: 2449775991012945808, guid: 40a78c05ba189bc44a9a01b04995c43a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 2449775991012945809, guid: 40a78c05ba189bc44a9a01b04995c43a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2449775991012945814, guid: 40a78c05ba189bc44a9a01b04995c43a, type: 3}
       propertyPath: rotateSpeed

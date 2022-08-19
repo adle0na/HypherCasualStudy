@@ -9,7 +9,7 @@ public class CameraController_Wav : MonoBehaviour
     [SerializeField]
     private Transform target;
     [SerializeField]
-    private float     yOffset    = 8;
+    private float     yOffset    = 5;
     [SerializeField]
     private float     smoothTime = 0.3f;
 

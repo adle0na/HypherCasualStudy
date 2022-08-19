@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 7403688799187242953}
   - component: {fileID: 8045836876015241201}
   - component: {fileID: 900043686285191415}
-  - component: {fileID: 8423648328902150883}
+  - component: {fileID: 5007723495832582451}
+  - component: {fileID: 1282243707523303256}
   m_Layer: 0
   m_Name: CircleResizer
   m_TagString: Obstacle
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 8274028828615463014}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -73,8 +74,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 77b3e3d1dd462cd428e7766a5a68f22e, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: bfb09b9e19c63354c8c4f2ce12bf9b52, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -98,7 +99,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endSize: {x: 0.5, y: 0.5, z: 0.5}
   resizeTime: 1
---- !u!58 &8423648328902150883
+--- !u!114 &5007723495832582451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8274028828615463014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46c8e51ba8cab214689a136c04c82ac2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotateSpeed: 50
+--- !u!58 &1282243707523303256
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -113,4 +127,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.25
+  m_Radius: 0.905

@@ -148,6 +148,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7403688799187242953, guid: e45affb305c2fa94c97bd44bac7fef19, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7403688799187242953, guid: e45affb305c2fa94c97bd44bac7fef19, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7403688799187242953, guid: e45affb305c2fa94c97bd44bac7fef19, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7403688799187242953, guid: e45affb305c2fa94c97bd44bac7fef19, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.2
       objectReference: {fileID: 0}
@@ -195,13 +207,35 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 1.25
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: e45affb305c2fa94c97bd44bac7fef19, type: 3}
+--- !u!1 &8277712153976417525 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8274028828615463014, guid: e45affb305c2fa94c97bd44bac7fef19, type: 3}
+  m_PrefabInstance: {fileID: 14379658087103635}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7389344334339765082 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7403688799187242953, guid: e45affb305c2fa94c97bd44bac7fef19, type: 3}
   m_PrefabInstance: {fileID: 14379658087103635}
   m_PrefabAsset: {fileID: 0}
+--- !u!58 &6036853587687492912
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8277712153976417525}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.905
 --- !u!1001 &14379658111457037
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -425,15 +459,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 900043686285191415, guid: e45affb305c2fa94c97bd44bac7fef19, type: 3}
       propertyPath: endSize.x
-      value: 0.25
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 900043686285191415, guid: e45affb305c2fa94c97bd44bac7fef19, type: 3}
       propertyPath: endSize.y
-      value: 0.25
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 900043686285191415, guid: e45affb305c2fa94c97bd44bac7fef19, type: 3}
       propertyPath: endSize.z
-      value: 0.25
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 900043686285191415, guid: e45affb305c2fa94c97bd44bac7fef19, type: 3}
       propertyPath: resizeTime
@@ -799,15 +833,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 900043686285191415, guid: e45affb305c2fa94c97bd44bac7fef19, type: 3}
       propertyPath: endSize.x
-      value: 0.25
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 900043686285191415, guid: e45affb305c2fa94c97bd44bac7fef19, type: 3}
       propertyPath: endSize.y
-      value: 0.25
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 900043686285191415, guid: e45affb305c2fa94c97bd44bac7fef19, type: 3}
       propertyPath: endSize.z
-      value: 0.25
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 900043686285191415, guid: e45affb305c2fa94c97bd44bac7fef19, type: 3}
       propertyPath: resizeTime
@@ -975,15 +1009,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 900043686285191415, guid: e45affb305c2fa94c97bd44bac7fef19, type: 3}
       propertyPath: endSize.x
-      value: 0.25
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 900043686285191415, guid: e45affb305c2fa94c97bd44bac7fef19, type: 3}
       propertyPath: endSize.y
-      value: 0.25
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 900043686285191415, guid: e45affb305c2fa94c97bd44bac7fef19, type: 3}
       propertyPath: endSize.z
-      value: 0.25
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 900043686285191415, guid: e45affb305c2fa94c97bd44bac7fef19, type: 3}
       propertyPath: resizeTime
@@ -1201,15 +1235,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 900043686285191415, guid: e45affb305c2fa94c97bd44bac7fef19, type: 3}
       propertyPath: endSize.x
-      value: 0.25
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 900043686285191415, guid: e45affb305c2fa94c97bd44bac7fef19, type: 3}
       propertyPath: endSize.y
-      value: 0.25
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 900043686285191415, guid: e45affb305c2fa94c97bd44bac7fef19, type: 3}
       propertyPath: endSize.z
-      value: 0.25
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 900043686285191415, guid: e45affb305c2fa94c97bd44bac7fef19, type: 3}
       propertyPath: resizeTime
@@ -1361,15 +1395,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 900043686285191415, guid: e45affb305c2fa94c97bd44bac7fef19, type: 3}
       propertyPath: endSize.x
-      value: 0.25
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 900043686285191415, guid: e45affb305c2fa94c97bd44bac7fef19, type: 3}
       propertyPath: endSize.y
-      value: 0.25
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 900043686285191415, guid: e45affb305c2fa94c97bd44bac7fef19, type: 3}
       propertyPath: endSize.z
-      value: 0.25
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 900043686285191415, guid: e45affb305c2fa94c97bd44bac7fef19, type: 3}
       propertyPath: resizeTime
@@ -1603,15 +1637,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 900043686285191415, guid: e45affb305c2fa94c97bd44bac7fef19, type: 3}
       propertyPath: endSize.x
-      value: 0.25
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 900043686285191415, guid: e45affb305c2fa94c97bd44bac7fef19, type: 3}
       propertyPath: endSize.y
-      value: 0.25
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 900043686285191415, guid: e45affb305c2fa94c97bd44bac7fef19, type: 3}
       propertyPath: endSize.z
-      value: 0.25
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 900043686285191415, guid: e45affb305c2fa94c97bd44bac7fef19, type: 3}
       propertyPath: resizeTime
